@@ -1,0 +1,12 @@
+{% extends "demo/module/module.html" %}
+
+{% block content %}
+<style>
+    /* disable fixed header in demos */
+    .app-header { position: static; }
+</style>
+
+<demo aria-label="Default header">
+    {% include "core/app-header/app-header.html" %}
+</demo>
+{% endblock %}

@@ -1,0 +1,26 @@
+{%- macro list(items) -%}
+    {% import _self as breadcrumb %}
+    <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+        {% for item in items %}
+        {% if loop.last %}
+            {{ breadcrumb.activeItem(loop.index, item.text) }}
+        {% else %}
+            {{ breadcrumb.item(loop.index, item.text, item.url) }}
+        {% endif %}
+        {% endfor %}
+    </ol>
+{%- endmacro -%}
+
+{%- macro item(index, text, url) -%}
+    <li property="itemListElement" typeof="ListItem">
+        <a href="{{ url }}">{{ text }}</a>
+        <meta property="position" content="{{ index }}">
+    </li>
+{%- endmacro -%}
+
+{%- macro activeItem(index, text) -%}
+    <li class="active" property="itemListElement" typeof="ListItem">
+        {{ text }}
+        <meta property="position" content="{{ index }}">
+    </li>
+{%- endmacro -%}

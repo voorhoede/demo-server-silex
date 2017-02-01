@@ -1,0 +1,25 @@
+{% extends "demo/module/module.html" %}
+{% import "core/breadcrumb/breadcrumb.html" as breadcrumb %}
+
+{% block content %}
+<demo aria-label="Breadcrumb with 1 active item">
+    {{ breadcrumb.list([
+        { text: 'Home' }
+    ]) }}
+</demo>
+
+<demo aria-label="Breadcrumb with 1 active item">
+    {{ breadcrumb.list([
+        { text: 'Home', url: '/' },
+        { text: 'Blog' }
+    ]) }}
+</demo>
+
+<demo aria-label="Breadcrumb with 2 items, 1 active">
+    {{ breadcrumb.list([
+        { text: 'Home', url: '/' },
+        { text: 'Blog', url: '/blog/' },
+        { text: 'My article' }
+    ]) }}
+</demo>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% if global.debug %}
+<button data-demo-linker-toggle>annotate</button>
+<style>
+    [data-demo-linker-toggle]{
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1050;
+        padding: 5px;
+        line-height: 1;
+        color: white;
+        background: mediumvioletred;
+        border: none;
+    }
+</style>
+
+<style>{% include "demo/linker/linker.css" %}</style>
+{#<link rel="stylesheet" href="{{ url('demo/linker.css') }}">#}
+<script src="{{ url('demo/linker.js') }}"></script>
+<script>window.demoLinker("{{ url('demo/mapping.json') }}", { 'baseUrl': "{{ url('demo') }}#modules/" });</script>
+{% endif %}
