@@ -15,7 +15,7 @@
 
 <script>
     window.demoViewer({
-        modules: 'modules',
+        modules: '{{ url("demo/modules.json") }}',
         sizes: [
             { name: 'XS', width: 320 },
             { name: 'S', width: 500 },

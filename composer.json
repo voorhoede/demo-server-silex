@@ -22,7 +22,8 @@
         "symfony/translation": "~2.8|3.0.*",
         "symfony/twig-bridge": "~3.2",
         "symfony/validator": "~2.8|3.0.*",
-        "symfony/filesystem": "^3.2"
+        "symfony/filesystem": "^3.2",
+        "michelf/php-markdown": "^1.7"
     },
     "autoload": {
         "psr-0": { "": "src/" }
